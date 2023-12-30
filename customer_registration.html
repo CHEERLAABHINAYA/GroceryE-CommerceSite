@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>customer registration</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+	
+	.parent
+	{
+		display:flex;
+		align-items:center;
+		height:500px;
+		justify-content:center;
+		background-color:lightpink;
+		margin-left:450px;
+		margin-right:450px;
+		margin-top:100px;
+		
+		
+	}
+	.box
+	{
+		margin:30px;
+		
+	}
+	
+	.btn
+	{
+		background-color:skyblue;
+		color:maroon;
+		margin-left:120px;
+		font-size:20px;
+		border-radius:15px;
+		padding:5px;
+		
+	}
+	.btn:hover
+	{
+		background-color:green;
+		color:white;
+	}
+	
+</style>
+</head>
+<body>
+<div class="parent">
+<form method="POST"  action="customer_registration.php" onsubmit="return validate()">
+<div >
+<h1 style="color:green;margin-left:30px;">Register here...</h1>
+</div>
+<div class="box 1">
+<input type="text" name="username" required maxlength=30 placeholder="username" style="font-size:20px;">
+</div>
+<div class="box 2"  >
+<input type="password" name="passwd1" id="passwd1" required  minlength=3 maxlength=8  placeholder="password" style="font-size:20px;">
+</div>
+<div class="box 3"  > 
+<input type="password" name="passwd2" id="passwd2" required minlength=3 maxlength=8 placeholder="Retype password" style="font-size:20px;" >
+</div>
+<div>
+<button class="btn" >Register</button>
+</div>
+</form>
+</div>
+<script>
+	function validate()
+	{
+		passwd1obj=document.getElementById("passwd1");
+		passwd2obj=document.getElementById("passwd2");
+		if(passwd1obj.value==passwd2obj.value)
+		{
+			return true;
+		}
+		else
+		{
+			alert("Password MisMatch!");
+			return false;
+		}
+	}
+</script>
+
+		
+</body>
+</html>
